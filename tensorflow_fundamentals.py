@@ -256,6 +256,11 @@ tf.multiply(tensor, 10)
 
 """Matrix Multiplication"""
 # In machine learning. matrix multiplication is one of the most common tensor operations
+# there are two rules our tensors (or matrices) need to fulfill if we're going
+# to matrix multiply them :
+
+# 1. The inner dimensions must match
+# 2. The resulting matrix has the shape of the inner dimensions
 
 # Matrix multipication in tensorflow
 multipication = tf.matmul(tensor, tensor)
@@ -285,3 +290,10 @@ Y = tf.constant([[7, 8],
 
 
 # Try to matrix multiply tensors of same shape
+# try_ = tf.matmul(X, Y)
+# print(try_)
+
+
+# Let's change the shape of Y
+changing_shape = tf.reshape(Y, shape=(2, 3))
+print(changing_shape)
