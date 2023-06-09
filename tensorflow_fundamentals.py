@@ -296,4 +296,24 @@ Y = tf.constant([[7, 8],
 
 # Let's change the shape of Y
 changing_shape = tf.reshape(Y, shape=(2, 3))
-print(changing_shape)
+# print(changing_shape)
+
+
+# check .shape X and Y Variable
+Shape = X.shape, tf.reshape(Y, shape=(2, 3)).shape
+# print(Shape)
+
+
+# Try change the shape of X instead of Y
+Change = tf.matmul(tf.reshape(X, shape=(2, 3)), Y)
+# print(Change)
+
+
+# Can do the same with transpose
+Transpose = X, tf.transpose(X), tf.reshape(X, shape=(2, 3))
+# print(Transpose)
+
+
+# Try matrix multipication with transpose rather than reshape
+Try_multipication_transpose = tf.matmul(tf.transpose(X), Y)
+print(Try_multipication_transpose)
